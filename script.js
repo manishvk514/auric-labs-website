@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Three.js Hero Background
+// Three.js Hero Background - Minimalistic particles
 function initHeroCanvas() {
     const canvas = document.getElementById('hero-canvas');
     if (!canvas) return;
@@ -106,9 +106,9 @@ function initHeroCanvas() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     
-    // Create floating particles
+    // Create subtle floating particles
     const geometry = new THREE.BufferGeometry();
-    const count = 2000;
+    const count = 500; // Reduced for cleaner look
     const positions = new Float32Array(count * 3);
     const colors = new Float32Array(count * 3);
     
@@ -117,21 +117,20 @@ function initHeroCanvas() {
         positions[i + 1] = (Math.random() - 0.5) * 50;
         positions[i + 2] = (Math.random() - 0.5) * 50;
         
-        // Orange to blue gradient colors
-        const mixFactor = Math.random();
-        colors[i] = 1.0 * mixFactor + 0.4 * (1 - mixFactor); // R
-        colors[i + 1] = 0.42 * mixFactor + 0.5 * (1 - mixFactor); // G
-        colors[i + 2] = 0.21 * mixFactor + 0.92 * (1 - mixFactor); // B
+        // Subtle purple-blue gradient
+        colors[i] = 0.4 + Math.random() * 0.2; // R
+        colors[i + 1] = 0.5 + Math.random() * 0.2; // G
+        colors[i + 2] = 0.92 + Math.random() * 0.08; // B
     }
     
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
     
     const material = new THREE.PointsMaterial({
-        size: 0.15,
+        size: 0.08, // Smaller, more elegant
         vertexColors: true,
         transparent: true,
-        opacity: 0.8,
+        opacity: 0.3, // More subtle
         blending: THREE.AdditiveBlending
     });
     
@@ -153,12 +152,12 @@ function initHeroCanvas() {
     function animate() {
         requestAnimationFrame(animate);
         
-        particles.rotation.x += 0.0003;
-        particles.rotation.y += 0.0005;
+        particles.rotation.x += 0.0002;
+        particles.rotation.y += 0.0003;
         
-        // Mouse interaction
-        particles.rotation.x += mouseY * 0.00005;
-        particles.rotation.y += mouseX * 0.00005;
+        // Subtle mouse interaction
+        particles.rotation.x += mouseY * 0.00002;
+        particles.rotation.y += mouseX * 0.00002;
         
         renderer.render(scene, camera);
     }
@@ -173,7 +172,7 @@ function initHeroCanvas() {
     });
 }
 
-// Three.js Geometric Shapes
+// Three.js Geometric Shapes - Minimalistic
 function initGeometricShapes() {
     const canvas = document.getElementById('geometric-canvas');
     if (!canvas) return;
@@ -185,47 +184,34 @@ function initGeometricShapes() {
     renderer.setSize(canvas.clientWidth, canvas.clientHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     
-    // Create floating geometric shapes
+    // Create minimal geometric shapes
     const shapes = [];
     
-    // Translucent Cube
-    const cubeGeometry = new THREE.BoxGeometry(3, 3, 3);
-    const cubeMaterial = new THREE.MeshBasicMaterial({ 
+    // Elegant wireframe sphere
+    const sphereGeometry = new THREE.SphereGeometry(3, 16, 16);
+    const sphereMaterial = new THREE.MeshBasicMaterial({ 
         color: 0x667eea,
         wireframe: true,
         transparent: true,
-        opacity: 0.7
+        opacity: 0.15
     });
-    const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
-    cube.position.set(-3, 2, 0);
-    shapes.push(cube);
-    scene.add(cube);
+    const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+    sphere.position.set(0, 0, 0);
+    shapes.push(sphere);
+    scene.add(sphere);
     
-    // Pyramid
-    const pyramidGeometry = new THREE.ConeGeometry(2, 4, 4);
-    const pyramidMaterial = new THREE.MeshBasicMaterial({ 
-        color: 0xff6b35,
+    // Subtle torus
+    const torusGeometry = new THREE.TorusGeometry(2.5, 0.5, 8, 16);
+    const torusMaterial = new THREE.MeshBasicMaterial({ 
+        color: 0x764ba2,
         wireframe: true,
         transparent: true,
-        opacity: 0.7
+        opacity: 0.1
     });
-    const pyramid = new THREE.Mesh(pyramidGeometry, pyramidMaterial);
-    pyramid.position.set(3, -1, 0);
-    shapes.push(pyramid);
-    scene.add(pyramid);
-    
-    // Dodecahedron
-    const dodecahedronGeometry = new THREE.DodecahedronGeometry(2);
-    const dodecahedronMaterial = new THREE.MeshBasicMaterial({ 
-        color: 0xf093fb,
-        wireframe: true,
-        transparent: true,
-        opacity: 0.7
-    });
-    const dodecahedron = new THREE.Mesh(dodecahedronGeometry, dodecahedronMaterial);
-    dodecahedron.position.set(0, 0, -2);
-    shapes.push(dodecahedron);
-    scene.add(dodecahedron);
+    const torus = new THREE.Mesh(torusGeometry, torusMaterial);
+    torus.position.set(0, 0, 0);
+    shapes.push(torus);
+    scene.add(torus);
     
     camera.position.z = 10;
     
@@ -234,9 +220,8 @@ function initGeometricShapes() {
         requestAnimationFrame(animate);
         
         shapes.forEach((shape, i) => {
-            shape.rotation.x += 0.003 * (i + 1) * 0.5;
-            shape.rotation.y += 0.005 * (i + 1) * 0.5;
-            shape.position.y += Math.sin(Date.now() * 0.001 + i) * 0.015;
+            shape.rotation.x += 0.001 * (i + 1);
+            shape.rotation.y += 0.0015 * (i + 1);
         });
         
         renderer.render(scene, camera);
@@ -254,7 +239,7 @@ function initGeometricShapes() {
     });
 }
 
-// Three.js Brain Visualization
+// Three.js Brain Visualization - Elegant Network
 function initBrainVisualization() {
     const canvas = document.getElementById('brain-canvas');
     if (!canvas) return;
@@ -266,44 +251,44 @@ function initBrainVisualization() {
     renderer.setSize(canvas.clientWidth, canvas.clientHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     
-    // Create brain-like structure with connected nodes
+    // Create minimal network structure
     const nodes = [];
     const connections = [];
-    const nodeCount = 60;
+    const nodeCount = 30; // Reduced for cleaner look
     
-    // Create nodes in brain shape
+    // Create nodes in elegant pattern
     for (let i = 0; i < nodeCount; i++) {
-        const geometry = new THREE.SphereGeometry(0.15, 12, 12);
+        const geometry = new THREE.SphereGeometry(0.08, 8, 8);
         const material = new THREE.MeshBasicMaterial({
-            color: new THREE.Color(`hsl(${240 + Math.random() * 60}, 70%, 60%)`),
+            color: 0x667eea,
             transparent: true,
-            opacity: 0.9
+            opacity: 0.4
         });
         
         const node = new THREE.Mesh(geometry, material);
         
-        // Position nodes in brain-like shape
+        // Position nodes in spherical pattern
         const theta = Math.random() * Math.PI * 2;
         const phi = Math.acos((Math.random() * 2) - 1);
-        const radius = 2.5 + Math.random() * 1.5;
+        const radius = 3;
         
         node.position.x = radius * Math.sin(phi) * Math.cos(theta);
-        node.position.y = radius * Math.sin(phi) * Math.sin(theta) * 0.7; // Flatten Y
+        node.position.y = radius * Math.sin(phi) * Math.sin(theta) * 0.7;
         node.position.z = radius * Math.cos(phi);
         
         nodes.push(node);
         scene.add(node);
     }
     
-    // Create connections
+    // Create subtle connections
     for (let i = 0; i < nodeCount; i++) {
         for (let j = i + 1; j < nodeCount; j++) {
             const distance = nodes[i].position.distanceTo(nodes[j].position);
-            if (distance < 2 && Math.random() > 0.8) {
+            if (distance < 2 && Math.random() > 0.85) {
                 const material = new THREE.LineBasicMaterial({
                     color: 0x667eea,
                     transparent: true,
-                    opacity: 0.3
+                    opacity: 0.08
                 });
                 
                 const points = [];
@@ -312,7 +297,7 @@ function initBrainVisualization() {
                 
                 const geometry = new THREE.BufferGeometry().setFromPoints(points);
                 const connection = new THREE.Line(geometry, material);
-                connections.push({ line: connection, opacity: 0.3 });
+                connections.push({ line: connection, opacity: 0.08 });
                 scene.add(connection);
             }
         }
@@ -324,19 +309,13 @@ function initBrainVisualization() {
     function animate() {
         requestAnimationFrame(animate);
         
-        // Rotate the entire brain
-        scene.rotation.y += 0.002;
+        // Gentle rotation
+        scene.rotation.y += 0.001;
         
-        // Pulse nodes
+        // Subtle pulse
         nodes.forEach((node, i) => {
-            const scale = 1 + Math.sin(Date.now() * 0.002 + i * 0.2) * 0.3;
+            const scale = 1 + Math.sin(Date.now() * 0.001 + i * 0.2) * 0.1;
             node.scale.set(scale, scale, scale);
-            node.material.opacity = 0.7 + Math.sin(Date.now() * 0.003 + i * 0.2) * 0.3;
-        });
-        
-        // Animate connection opacity
-        connections.forEach((connection, i) => {
-            connection.line.material.opacity = 0.2 + Math.sin(Date.now() * 0.001 + i * 0.1) * 0.2;
         });
         
         renderer.render(scene, camera);
