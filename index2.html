@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURIC LABS - Your One-Stop AI Solution Company</title>
+    <meta name="description" content="Complete AI Mastery - Everything you need under one roof. From creative visuals to intelligent automation.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS with cache busting -->
+    <link rel="stylesheet" href="styles2.css?v=2.0">
+    
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="nav-logo">AURIC LABS</div>
+            <ul class="nav-menu">
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#expertise" class="nav-link">Expertise</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link nav-cta">Contact Us</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-bg">
+            <div id="hero-canvas"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span class="badge-number">01</span>
+                        <span class="badge-text">AI Solutions</span>
+                    </div>
+                    <h1 class="hero-title">Your One-Stop AI<br>Solution Company</h1>
+                    <h2 class="hero-subtitle">Need Something Built in AI? We Do That.</h2>
+                    <p class="hero-description">
+                        Whatever you need in AI - we build it for you. No matter how complex, 
+                        how creative, or how specific.
+                    </p>
+                    <button class="hero-cta">
+                        Contact Us
+                        <svg class="cta-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="hero-graphics">
+                    <div id="geometric-canvas"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Auric Labs Section -->
+    <section class="why-section" id="expertise">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span class="badge-number">02</span>
+                    <span class="badge-text">Auric Labs</span>
+                </div>
+                <h2 class="section-title">Why Auric Labs</h2>
+            </div>
+            
+            <div class="why-cards">
+                <div class="why-card blue-gradient">
+                    <div class="vision-pill">The vision</div>
+                    <h3 class="card-title">Complete AI Mastery</h3>
+                    <p class="card-description">
+                        Everything you need under one roof. From creative visuals to intelligent 
+                        automation - we handle your entire AI ecosystem without vendor juggling.
+                    </p>
+                </div>
+                
+                <div class="why-card orange-gradient">
+                    <div class="vision-pill">The vision</div>
+                    <h3 class="card-title">Obsessive Quality Standards</h3>
+                    <p class="card-description">
+                        We don't ship until it's perfect. Multiple iterations, rigorous testing, 
+                        and relentless refinement until excellence is achieved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Vision Statement -->
+    <section class="vision-section">
+        <div class="container">
+            <h2 class="vision-text">
+                We work with <span class="gradient-text">your vision</span>, not against it. 
+                By handling <span class="gradient-text">complex development</span>, delivering 
+                <span class="gradient-text">breakthrough solutions</span>, and learning from 
+                every project challenge, we help businesses focus on what they do best: 
+                <span class="gradient-text">innovate, lead, and transform</span> industries.
+            </h2>
+        </div>
+    </section>
+    
+    <!-- Capabilities Section -->
+    <section class="capabilities-section">
+        <div class="container">
+            <div class="capabilities-grid">
+                <div class="capability-card orange-gradient">
+                    <h3 class="capability-title">Our Capabilities</h3>
+                    <p class="capability-subtitle">Creative excellence meets technical precision</p>
+                    
+                    <ul class="stats-list">
+                        <li class="stat-item">
+                            <span class="stat-check">✓</span>
+                            <span class="stat-label">Project Delivery:</span>
+                            <span class="stat-value">&lt;2 weeks average</span>
+                        </li>
+                        <li class="stat-item">
+                            <span class="stat-check">✓</span>
+                            <span class="stat-label">Client Success Rate:</span>
+                            <span class="stat-value">99.2%</span>
+                        </li>
+                        <li class="stat-item">
+                            <span class="stat-check">✓</span>
+                            <span class="stat-label">AI Models Deployed:</span>
+                            <span class="stat-value">200+</span>
+                        </li>
+                        <li class="stat-item">
+                            <span class="stat-check">✓</span>
+                            <span class="stat-label">Support Availability:</span>
+                            <span class="stat-value">24/7/365</span>
+                        </li>
+                        <li class="stat-item">
+                            <span class="stat-check">✓</span>
+                            <span class="stat-label">Scaling Capability:</span>
+                            <span class="stat-value">Enterprise-grade</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="capability-card blue-gradient">
+                    <h3 class="capability-title">Ready to Transform Your Vision?</h3>
+                    <p class="capability-subtitle">Tell us about your AI project and we'll show you what's possible.</p>
+                    
+                    <form class="contact-form" id="contact-form">
+                        <input type="text" placeholder="Your Name" class="form-input" required>
+                        <input type="email" placeholder="Business Email" class="form-input" required>
+                        <input type="text" placeholder="Company Name" class="form-input" required>
+                        <button type="submit" class="form-submit">Contact Us Today</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- AI Excellence Section -->
+    <section class="excellence-section">
+        <div class="container">
+            <div class="excellence-content">
+                <h2 class="excellence-title">Experience AI Excellence</h2>
+                <p class="excellence-subtitle">
+                    Our cutting-edge AI solutions are designed to transform how businesses 
+                    create, innovate, and scale in the digital age.
+                </p>
+                <div class="excellence-visual">
+                    <div id="brain-canvas"></div>
+                    <div class="visual-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Features</span>
+                <h2 class="section-title">Everything AI<br>Under One Roof</h2>
+                <p class="section-description">
+                    Whatever you envision in AI - we build it for you. From stunning 
+                    creative content to intelligent business automation.
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4 class="service-title">Creative AI Solutions</h4>
+                    <p class="service-description">
+                        Generate stunning visuals, videos, and content that captivate your audience
+                    </p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <rect x="7" y="7" width="10" height="10" rx="1" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h4 class="service-title">Intelligent Automation</h4>
+                    <p class="service-description">
+                        Streamline workflows and automate complex business processes seamlessly
+                    </p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4 class="service-title">Custom AI Applications</h4>
+                    <p class="service-description">
+                        Build exactly what you need, tailored to your specific requirements
+                    </p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h4 class="service-title">AI Agents & Assistants</h4>
+                    <p class="service-description">
+                        Deploy smart virtual workers that understand context and deliver results
+                    </p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M3 13h2l3 3 4-6 4 3h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h4 class="service-title">Advanced Analytics</h4>
+                    <p class="service-description">
+                        Extract actionable insights from your data with cutting-edge AI models
+                    </p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2a3 3 0 0 0-3 3v4a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="12" y1="19" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="8" y1="23" x2="16" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4 class="service-title">Voice & Language AI</h4>
+                    <p class="service-description">
+                        Natural communication interfaces that understand and respond intelligently
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span class="badge-number">04</span>
+                    <span class="badge-text">Testimonials</span>
+                </div>
+                <h2 class="section-title">What Our Clients Say</h2>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card gradient-1">
+                    <div class="quote-mark">"</div>
+                    <p class="testimonial-text">
+                        Auric Labs revolutionized our content pipeline, creating stunning visuals 
+                        while our creative team focuses on high-level strategy. We saw a 300% boost 
+                        in output quality within just two months.
+                    </p>
+                    <div class="testimonial-author">
+                        <h4 class="author-name">Sarah Chen</h4>
+                        <p class="author-title">Creative Director, Nexus Media Group</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card gradient-2">
+                    <div class="quote-mark">"</div>
+                    <p class="testimonial-text">
+                        Their automation solutions cut our processing time by 75% while dramatically 
+                        improving accuracy. The AI's learning capabilities continue to amaze our 
+                        entire operations team.
+                    </p>
+                    <div class="testimonial-author">
+                        <h4 class="author-name">Michael Rodriguez</h4>
+                        <p class="author-title">VP Operations, TechFlow Solutions</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card gradient-3">
+                    <div class="quote-mark">"</div>
+                    <p class="testimonial-text">
+                        Auric Labs' intelligent agents work faster than any system we've implemented. 
+                        It's like having a brilliant researcher who never gets tired and maintains 
+                        surgical precision.
+                    </p>
+                    <div class="testimonial-author">
+                        <h4 class="author-name">Dr. Amara Patel</h4>
+                        <p class="author-title">Head of Innovation, BioAdvance Research</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card gradient-4">
+                    <div class="quote-mark">"</div>
+                    <p class="testimonial-text">
+                        As a mid-sized company, we never imagined advanced AI would be within reach. 
+                        Auric Labs completely changed that reality with their accessible, powerful solutions.
+                    </p>
+                    <div class="testimonial-author">
+                        <h4 class="author-name">Jason Lee</h4>
+                        <p class="author-title">CEO, Innovative Solutions Inc.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer class="footer" id="contact">
+        <div class="footer-gradient">
+            <div class="container">
+                <button class="footer-cta">Contact Us</button>
+                <h2 class="footer-logo">AURIC LABS</h2>
+                <p class="footer-tagline">Powered by AI, Crafted by Humans</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="script2.js?v=2.0"></script>
+</body>
+</html>
